@@ -1,7 +1,7 @@
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
-        
+        //storing the frequency of remainders and adding (freuency of a remainder -1) to ans
         unordered_map<int,int> mp;
         mp[0]=1;
         
