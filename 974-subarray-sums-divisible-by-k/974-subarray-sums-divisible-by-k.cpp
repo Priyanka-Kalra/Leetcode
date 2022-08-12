@@ -3,7 +3,7 @@ public:
     int subarraysDivByK(vector<int>& nums, int k) {
         //storing the frequency of remainders and adding (freuency of a remainder -1) to ans
         unordered_map<int,int> mp;
-        mp[0]=1;
+        
         
         int sum=0;
         int ans=0;
@@ -11,13 +11,13 @@ public:
             sum+=it;
             int c=sum%k;
             
-            if(c>=0)mp[c]++;
-            else {
-                c=k+c;
-                mp[c]++;
-            }
+            if(c==0)ans++;
+            else if(c<0)c=c+k;
             
-            ans+=mp[c]-1;
+            if(mp.find(c)!=mp.end()){
+                ans+=mp[c];
+            }
+            mp[c]++;
         }
         
         return ans;
