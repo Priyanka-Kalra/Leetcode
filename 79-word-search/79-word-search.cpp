@@ -1,4 +1,5 @@
 class Solution {
+    //TC-O(n*m*(4^k)) k is the length of string
     bool exist(int m,int n,int r,int c,vector<vector<char> > &board,int ptr, string word,vector<vector<int> > &visited) {
         
         if(word[ptr]=='\0')return true;
