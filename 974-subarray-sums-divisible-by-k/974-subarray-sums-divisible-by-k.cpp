@@ -1,7 +1,6 @@
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
-        //storing the frequency of remainders and adding (freuency of a remainder -1) to ans
         unordered_map<int,int> mp;
         
         
@@ -12,7 +11,7 @@ public:
             int c=sum%k;
             
             if(c==0)ans++;
-            else if(c<0)c=c+k;
+            else if(c<0)c=c+k;//refer pepcoding for this change
             
             if(mp.find(c)!=mp.end()){
                 ans+=mp[c];
