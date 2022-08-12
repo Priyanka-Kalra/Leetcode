@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //TC-O(K),SC-O(1)
+    
     //https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/discuss/2337113/O(k)-Time-complexity-Simple-solution-with-handwritten-explanation.
     int maxScore(vector<int>& cardPoints, int k) {
         
