@@ -1,4 +1,6 @@
 class Solution {
+    
+    //https://www.youtube.com/watch?v=fei4bJQdBUQ
     bool checkLive(int i,int j,vector<vector<int>>& board,int m,int n){
         
         int count=0;
