@@ -1,6 +1,8 @@
 class Solution {
     
     //https://www.youtube.com/watch?v=fei4bJQdBUQ
+    
+    //TC-O(8*M*N)
     bool checkLive(int i,int j,vector<vector<int>>& board,int m,int n){
         
         int count=0;
