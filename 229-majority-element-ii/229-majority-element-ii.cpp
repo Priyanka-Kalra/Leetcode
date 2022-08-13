@@ -7,7 +7,7 @@ public:
         int count1=0,count2=0;
         
         for(auto it: nums){
-            if(count1==0 && it!=el2)el1=it;
+            if(count1==0 && it!=el2)el1=it;//and condition is used for case when count2!=0 and count1==0 but nums[i]==el2
             else if(count2==0)el2=it;
             
             if(it==el1)count1++;
