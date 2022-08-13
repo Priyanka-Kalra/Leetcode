@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //pairing two diff elements
     int majorityElement(vector<int>& nums) {
         
         int n=nums.size();
