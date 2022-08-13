@@ -1,4 +1,6 @@
 class Solution {
+    //TC-O(2^N)
+    //SC-O(K)
     void combine(int si,int n, int k,vector<int> &temp,vector<vector<int>> &output){
         
         if(k==0){
