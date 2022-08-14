@@ -6,7 +6,39 @@ class MyStack {
     
     queue<int> Q;
 public:
+    /*
+    //1.
+    void push(int x) {
+        queue<int> P;
+        P.push(x);
+        while(!Q.empty()){
+            P.push(Q.front());
+            Q.pop();
+            
+        }
+        while(!P.empty()){
+            Q.push(P.front());
+            P.pop();
+        }
+        
+    }
     
+    int pop(){
+        int val=Q.front();
+        Q.pop();
+        return val; 
+    }
+    
+    int top() {
+        int val=Q.front();
+        return val;
+        
+    }
+
+    bool empty() {
+        return (Q.empty());
+    }
+    */
     
     //2.
 
