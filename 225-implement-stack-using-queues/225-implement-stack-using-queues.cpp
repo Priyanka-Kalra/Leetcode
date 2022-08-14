@@ -3,12 +3,11 @@
 
 //2.one queues(push element in q,now if size>1,pop element and push it back til(size-1)times)
 class MyStack {
-
     
-public:
     queue<int> Q;
-    
-    
+public:
+    /*
+    //1.
     void push(int x) {
         queue<int> P;
         P.push(x);
@@ -36,10 +35,39 @@ public:
         
     }
 
-    
     bool empty() {
         return (Q.empty());
     }
+    */
+    
+    //2.
+
+    void push(int x) {
+        Q.push(x);
+        int size=Q.size();
+        while(size>1){
+            int t=Q.front();
+            Q.pop();
+            size--;
+            Q.push(t);
+        }
+    }
+    
+    int pop() {
+        int t=Q.front();
+        Q.pop();
+        return t;
+        
+    }
+    
+    int top() {
+        return Q.front();
+    }
+    
+    bool empty() {
+        return Q.empty();
+    }
+
 };
 
 /**
