@@ -1,7 +1,8 @@
+//TC-O(1) for all operations
+//SC-O(N)
 class MinStack {
     stack<int> s;
     stack<int> minS;
-    
     
 public:
     MinStack() {
