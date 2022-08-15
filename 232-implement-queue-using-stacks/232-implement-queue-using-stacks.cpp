@@ -5,7 +5,38 @@
 class MyQueue {
     
 public:
+    /*
+    //1.
+    stack<int> s1;
+    void push(int x) {
+        stack<int> s2;
+        while(!s1.empty()){
+            s2.push(s1.top());
+            s1.pop();
+        }
+        s1.push(x);
+        while(!s2.empty()){
+            s1.push(s2.top());
+            s2.pop();
+        }
+    }
     
+    int pop() {
+        int val=s1.top();
+        s1.pop();
+        return val;
+    }
+    
+    int peek() {
+        int val=s1.top();
+        return val;
+        
+    }
+    
+    bool empty() {
+        return s1.empty();
+    }
+    */
     
     //2.TC-O(1) on average 
     stack<int> input;
