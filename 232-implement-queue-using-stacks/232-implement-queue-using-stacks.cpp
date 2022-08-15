@@ -1,44 +1,37 @@
+//https://www.youtube.com/watch?v=3Et9MrMc02A&t=249s
+//1.using two stacks s1,s2(pop element one by one from s1 and push in s2.after this insert element (to be inserted) in s1.pop element one by one from s2 and push in s1.)TC-O(N) for push and TC-O(1)for rest
+
+
 class MyQueue {
-    stack<int> S;
+    stack<int> s1;
 public:
-    
     void push(int x) {
-        S.push(x);
+        stack<int> s2;
+        while(!s1.empty()){
+            s2.push(s1.top());
+            s1.pop();
+        }
+        s1.push(x);
+        while(!s2.empty()){
+            s1.push(s2.top());
+            s2.pop();
+        }
     }
     
     int pop() {
-        stack<int> t;
-        while(!S.empty()){
-            t.push(S.top());
-            S.pop();
-        }
-        int val=t.top();
-        t.pop();
-        while(!t.empty()){
-            S.push(t.top());
-            t.pop();
-        }
+        int val=s1.top();
+        s1.pop();
         return val;
     }
     
     int peek() {
-        
-        stack<int> t;
-        while(!S.empty()){
-            t.push(S.top());
-            S.pop();
-        }
-        int val=t.top();
-        while(!t.empty()){
-            S.push(t.top());
-            t.pop();
-        }
+        int val=s1.top();
         return val;
         
     }
     
     bool empty() {
-        return S.empty();
+        return s1.empty();
     }
 };
 
