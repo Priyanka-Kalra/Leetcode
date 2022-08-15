@@ -3,8 +3,11 @@
 
 
 class MyQueue {
-    stack<int> s1;
+    
 public:
+    /*
+    //1.
+    stack<int> s1;
     void push(int x) {
         stack<int> s2;
         while(!s1.empty()){
@@ -32,6 +35,50 @@ public:
     
     bool empty() {
         return s1.empty();
+    }
+    */
+    
+    //2.TC-O(1) on average 
+    stack<int> input;
+    stack<int> output;
+    
+    void push(int x) {
+        input.push(x);
+    }
+    
+    int pop() {
+        if(!output.empty()){
+            int val=output.top();
+            output.pop();
+            return val;
+        }
+        while(!input.empty()){
+            output.push(input.top());
+            input.pop();
+        }
+        int val=output.top();
+        output.pop();
+        return val;
+        
+    }
+    
+    int peek() {
+        
+        if(!output.empty()){
+            int val=output.top();
+            return val;
+        }
+        while(!input.empty()){
+            output.push(input.top());
+            input.pop();
+        }
+        int val=output.top();
+        return val;
+        
+    }
+    
+    bool empty() {
+        return (input.empty() && output.empty());
     }
 };
 
