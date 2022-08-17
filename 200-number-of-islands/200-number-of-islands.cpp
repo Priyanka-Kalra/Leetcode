@@ -1,3 +1,4 @@
+//TC-O(8*(N^2))
 class Solution {
     void dfs(int row,int col,vector<vector<char>>& grid,vector< vector<int>>& visited){
         
@@ -15,31 +16,6 @@ class Solution {
             dfs(row,col-1,grid,visited);
             
         
-        
-        // queue<pair<int,int> > order;
-        // order.push({row,col});
-        
-//         while(!order.empty()){
-//             int r=order.front().first;
-//             int c=order.front().second;
-//             order.pop();
-//             visited[r][c]=0;
-            
-//             for(int i=-1;i<=1;i++){
-//                 for(int j=-1;j<=1;j++){
-                    
-//                     int tr=r+i;
-//                     int tc=c+j;
-                    
-//                     if(tr!=r && tc!=c)continue;
-                    
-//                     if(tr>=0 && tr<m && tc>=0 &&tc<n){
-//                         if(grid[tr][tc]=='1' && visited[tr][tc]==-1)
-//                             order.push({tr,tc});
-//                     }
-//                 }
-//             }
-//         }
     }
 public:
     int numIslands(vector<vector<char>>& grid) {
