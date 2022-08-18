@@ -1,3 +1,7 @@
+//https://www.youtube.com/watch?v=s9fokUqJ76A
+
+//TC-O(N*(2^N)), TC-O(N) n is number,N=2*n, first N for copying and second 2^N for backtracking
+//add closing paren. only if open>close
 class Solution {
     void generateParenthesis(int n,int open,int close, vector<char> temp, vector<string> &ans){
         
