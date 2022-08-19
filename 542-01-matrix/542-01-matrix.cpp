@@ -1,6 +1,9 @@
 class Solution {
     //https://www.youtube.com/watch?v=edXdVwkYHF8&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=14
     //instead of starting from 1(initial) we start from each 0(target)
+    
+    //TC-O(N*M)
+    //SC-O(N*M)
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         
