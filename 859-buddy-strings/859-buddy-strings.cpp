@@ -18,15 +18,15 @@ public:
             
         }
         
-        //abc  cba
+        //just one swap eg "abc" "cba"
         if(p1!=-1 && p2!=-1){
             if(s[p1]!=goal[p2] || s[p2]!=goal[p1])return false;
             else return true;
         }
-        //abc.  adc
+        //only one diif element eg "abc" "adc"
         else if(p1!=-1 && p2==-1)return false;
         
-        //ab ab.  abab abab
+       //both strings same
         unordered_set<char> mp;
         for(int i=0;i<n;i++){
             char c=s[i];
