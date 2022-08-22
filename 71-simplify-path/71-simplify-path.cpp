@@ -1,8 +1,8 @@
 //https://leetcode.com/problems/simplify-path/discuss/1847357/C%2B%2B-oror-Easy-oror-Stack-oror-Simple-oror-Explained-oror-Algorithm
 class Solution {
 public:
-    // "/a//b////c/d//././/.."
-    // "/a/b/c"
+    //TC-O(N)
+    //SC-O(N)
     string simplifyPath(string path) {
         
         stack<string> order;
