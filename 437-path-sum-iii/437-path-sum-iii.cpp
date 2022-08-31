@@ -32,14 +32,6 @@ public:
         if(mp[sum]>1)mp[sum]--;
         else mp.erase(sum);
     }
-    /*
-    count=1
-    target=22
-    sum=20
-    mp=5,1  9,1  20,1   
-    
-    
-    */
     int pathSum(TreeNode* root, int targetSum) {
         
         if(root==NULL)return 0;
