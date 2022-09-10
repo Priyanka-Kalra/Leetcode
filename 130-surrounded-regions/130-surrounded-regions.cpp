@@ -1,3 +1,6 @@
+//https://www.youtube.com/watch?v=BtdgAys4yMk&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=15
+//we start with with border elements=='O' and mark the elements connected to  such elements.
+//finally we traverse completely on board and for those position it has not been maeked/visited we put 'X'
 class Solution {
     
     void dfs(int i,int j, int r,int c,vector<vector<char>>& board,vector<vector<int>> &visited){
