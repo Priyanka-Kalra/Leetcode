@@ -30,10 +30,6 @@ public:
     }
     
     void addAtHead(int val) {
-        // Node *temp=new Node(val);
-        // temp->next=head->next;
-        // head->next=temp;
-        // size++;
         addAtIndex(0,val);
         
     }
