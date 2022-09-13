@@ -35,12 +35,6 @@ public:
     }
     
     void addAtTail(int val) {
-//         Node *temp=new Node(val);
-//         Node *cur=head;
-//         while(cur->next)cur=cur->next;
-        
-//         cur->next=temp;
-//         size++;
         addAtIndex(size,val);
     }
     
