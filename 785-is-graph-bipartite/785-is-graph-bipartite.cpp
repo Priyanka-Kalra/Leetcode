@@ -9,13 +9,16 @@ class Solution {
             
             pair<int,int> p=order.front();
             order.pop();
-            colour[p.first]=p.second;
             
-            for(int i=0;i<graph[p.first].size();i++){
-                int temp=graph[p.first][i];
-                if(colour[temp]==-1)order.push({temp,1-p.second});
+            int val=p.first;
+            int col=p.second;
+            colour[val]=col;
+            
+            for(int i=0;i<graph[val].size();i++){
+                int temp=graph[val][i];
+                if(colour[temp]==-1)order.push({temp,1-col});
                 
-                else if(colour[temp]==p.second)return false;
+                else if(colour[temp]==col)return false;
                 
             }
             
