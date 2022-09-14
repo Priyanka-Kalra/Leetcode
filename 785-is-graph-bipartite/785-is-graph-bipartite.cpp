@@ -7,16 +7,15 @@ class Solution {
         order.push({node,0});
         while(!order.empty() ){
             
-            int val=order.front().first;
-            int col=order.front().second;
+            pair<int,int> p=order.front();
             order.pop();
-            colour[val]=col;
+            colour[p.first]=p.second;
             
-            for(int i=0;i<graph[val].size();i++){
-                int temp=graph[val][i];
-                if(colour[temp]==-1)order.push({temp,1-col});
+            for(int i=0;i<graph[p.first].size();i++){
+                int temp=graph[p.first][i];
+                if(colour[temp]==-1)order.push({temp,1-p.second});
                 
-                else if(colour[temp]==col)return false;
+                else if(colour[temp]==p.second)return false;
                 
             }
             
