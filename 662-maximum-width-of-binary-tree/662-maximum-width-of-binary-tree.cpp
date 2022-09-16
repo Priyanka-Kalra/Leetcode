@@ -21,9 +21,9 @@ public:
         int width=0;
         queue<pair<TreeNode*,int> > order;
         order.push({root,0});
-        int l_i,r_i;
         while(!order.empty()){
             
+            int l_i,r_i;
             int size=order.size();
             for(int i=0;i<size;i++){
                 
