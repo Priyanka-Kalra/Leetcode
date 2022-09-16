@@ -9,10 +9,14 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+//TC-O(N),SC-O(N)
+//using indexing like priority queue ans returning the max diff of indexes at a level
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
         if(root==NULL)return 0;
+        else if(!root->left && !root->right)return 1;
         
         
         int width=0;
