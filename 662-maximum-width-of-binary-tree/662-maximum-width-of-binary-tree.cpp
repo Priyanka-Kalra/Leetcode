@@ -18,15 +18,13 @@ public:
         if(root==NULL)return 0;
         else if(!root->left && !root->right)return 1;
         
-        
         int width=0;
-        
         queue<pair<TreeNode*,int> > order;
         order.push({root,0});
+        int l_i,r_i;
         while(!order.empty()){
             
             int size=order.size();
-            int l_i,r_i;
             for(int i=0;i<size;i++){
                 
                 TreeNode* r=order.front().first;
