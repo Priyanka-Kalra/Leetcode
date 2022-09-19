@@ -8,10 +8,11 @@ public:
         for(auto it: paths){
             stringstream s(it);  
             //location
-            string location,file_name,file_text;
+            string location;
             getline(s,location,' ');
             
             while(s){
+                string file_name,file_text;
                 getline(s,file_name,'(');
                 getline(s,file_text,')');
                 
