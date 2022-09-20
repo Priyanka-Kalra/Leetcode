@@ -9,21 +9,17 @@ public:
         
         int n=nums.size();
         
-        vector<int> ans;
+        vector<int> ans(n,-1);
         sort(nums.begin(),nums.end());
         
-        int l=0,r=n-1;
-        for(int i=0;i<n;i++){
-            
-            if(i%2==0){
-                ans.push_back(nums[l]);
-                l++;
-            }
-            else{
-                ans.push_back(nums[r]);
-                r--;
-            }
-            
+        int l=0;
+        for(int i=0;i<n;i=i+2){
+            ans[i]=nums[l];
+            l++;
+        }
+        for(int i=1;i<n;i=i+2){
+            ans[i]=nums[l];
+            l++;
         }
         
         return ans;
