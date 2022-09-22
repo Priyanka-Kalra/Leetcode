@@ -1,5 +1,5 @@
-//1.reverse the stringand put each word in stack. then pop from stack and put each word in final answer
-//2.Reverse word by word
+//1.reverse the stringand put each word in stack. then pop from stack and put each word in final answer,TC-O(N),SC-O(N)
+//2.Reverse word by word,TC-O(N),SC-O(1)
 class Solution {
     void swap(char &a, char &b){
         char c=a;
