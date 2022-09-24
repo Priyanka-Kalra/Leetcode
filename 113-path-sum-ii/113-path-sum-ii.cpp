@@ -10,13 +10,16 @@
  * };
  */
 class Solution {
+    bool leaf(TreeNode *root){
+        return (!root->left && !root->right);
+    }
     void pathSum(TreeNode* root,int &targetSum,vector<int> &temp, vector<vector<int>> &answer){
         
         if(root==NULL)return;
         
         targetSum-=root->val;
         temp.push_back(root->val);
-        if(targetSum==0 && (!root->left && !root->right))answer.push_back(temp);
+        if(targetSum==0 && leaf(root))answer.push_back(temp);
         
         pathSum(root->left,targetSum,temp,answer);
         pathSum(root->right,targetSum,temp,answer);
