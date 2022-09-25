@@ -29,7 +29,6 @@ public:
         
         front=(front+1)%capacity;
         size--;
-        
         if(size==0){
             front=-1;
             rear=-1;
