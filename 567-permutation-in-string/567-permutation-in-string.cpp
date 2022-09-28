@@ -1,6 +1,6 @@
-//
+//https://leetcode.com/problems/permutation-in-string/discuss/1762469/C%2B%2B-oror-SLIDING-WINDOW-OPTIMIZED-oror-Well-Explained
 class Solution {
-    bool areEqual(vector<int> a,vector<int> b){
+    bool areEqual(vector<int> &a,vector<int> &b){
         
         for(int i=0;i<26;i++){
             if(a[i]!=b[i])return false;
