@@ -11,7 +11,7 @@ public:
             b=nums[i+1];
             c=nums[i+2];
             
-            if(a+b>c && b+c>a && a+c>b)return (a+b+c);
+            if(b+a>c)return (a+b+c);
         }
         return 0;
     }
