@@ -1,4 +1,7 @@
 //using backtracking form different subsequences. for each subsequence check whether all characters unique or not(if unique update the answer)
+
+//TC-O(K*(2^N)).SC-O(2^N)
+//K is avg length of each string and N is size of given vector arr
 class Solution {
     bool isunique(string s){
         vector<int> freq(26,0); 
