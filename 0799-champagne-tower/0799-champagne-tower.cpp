@@ -8,7 +8,6 @@ public:
         
         for(int i=0;i<query_row;i++){
             for(int j=0;j<=i;j++){
-
                 if(glass[i][j]>1.0){
                     double remaining=glass[i][j]-1.0;
                     glass[i+1][j]+=remaining/2.0;
