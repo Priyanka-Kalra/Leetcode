@@ -5,23 +5,17 @@
 //case3 - else return false;
 class Solution {
 public:
-    
-    //[0,1,0,3,0,4,0,4,0],k=5
-    //0 1 1 4 4 8 8 12 12
-    //0 1 1
     bool checkSubarraySum(vector<int>& nums, int k) {
         
-        if(nums.size()==1)return false;
+        int n=nums.size();
+        if(n==1)return false;
         
         vector<int> arr;
-        int sum=0;
-        for(auto i:nums){
-            sum+=i;
-            arr.push_back(sum);
-        }
+        arr.push_back(nums[0]);
+        for(int i=1;i<n;i++)arr.push_back(arr[i-1]+nums[i]);
+        
 
         unordered_map<int,int> mp;
-        int n=arr.size();
         for(int i=0;i<n;i++){
             int r=arr[i]%k;
             
