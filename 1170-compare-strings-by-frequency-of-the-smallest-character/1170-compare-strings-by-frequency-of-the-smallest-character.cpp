@@ -16,12 +16,13 @@ public:
         
         vector<int> answer;
         
-        //index from 0 to 11,11 index required bcz if in line 33,assume f=10
+        //index from 0 to 11,11 index required bcz if in line 35,assume f=10
         vector<int> fr(12,0);
         
         //storing count of strings with a given frequency.here max frequency is 10
         
-        for(int i=0;i<words.size();i++){
+        int n=words.size();
+        for(int i=0;i<n;i++){
             int f=freq(words[i]);
             fr[f]++;
         }
@@ -29,7 +30,8 @@ public:
         //cumulative
         for(int i=9;i>=0;i--)fr[i]+=fr[i+1];
         
-        for(int i=0;i<queries.size();i++){
+        n=queries.size();
+        for(int i=0;i<n;i++){
             int f=freq(queries[i]);
             answer.push_back(fr[f+1]);
         }
