@@ -3,7 +3,7 @@ class Solution {
     int freq(string s){
         vector<int> f(26,0);
         
-        for(int i=0;s[i]!='\0';i++)f[s[i]-'a']++;
+        for(auto i:s)f[i-'a']++;
         
         for(int i=0;i<26;i++)
             if(f[i]!=0)return f[i];
