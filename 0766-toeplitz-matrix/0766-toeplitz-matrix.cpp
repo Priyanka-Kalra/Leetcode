@@ -1,3 +1,4 @@
+//TC-O(N*M)
 class Solution {
 public:
     bool isToeplitzMatrix(vector<vector<int>>& matrix) {
@@ -28,11 +29,3 @@ public:
         return true;
     }
 };
-//[36,59,71,15,26,82,87]
-//[56,36,59,71,15,26,82]
-//[15, 0,36,59,71,15,26]
-
-//  0 1 2 3
-//0
-//1
-//2
