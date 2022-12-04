@@ -5,8 +5,8 @@ public:
         int n=nums.size();
         if(n==1)return 0;
         
-        vector<long> pre(n);
-        vector<long> pos(n);
+        vector<long int> pre(n);
+        vector<long int> pos(n);
         
         pre[0]=nums[0];
         for(int i=1;i<n;i++)pre[i]=nums[i]+pre[i-1];
