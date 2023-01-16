@@ -20,21 +20,50 @@ public:
 // 	}
 	
 	//2.Memoization, TC-O(N), SC-O(N)
-	int help_findMaxSum(vector<int> &dp,int *arr, int index){
-	    if(index<0)return 0;
-	    if(index==0)return dp[0]=arr[0];
+// 	int help_findMaxSum(vector<int> &dp,int *arr, int index){
+// 	    if(index<0)return 0;
+// 	    if(index==0)return dp[0]=arr[0];
 	    
-	    if(dp[index]!=-1)return dp[index];
+// 	    if(dp[index]!=-1)return dp[index];
 	    
-	    int l=INT_MIN,r=INT_MIN;
-	    l=arr[index]+help_findMaxSum(dp,arr,index-2);
-	    r=help_findMaxSum(dp,arr,index-1);
-	    return dp[index]=max(l,r);
+// 	    int l=INT_MIN,r=INT_MIN;
+// 	    l=arr[index]+help_findMaxSum(dp,arr,index-2);
+// 	    r=help_findMaxSum(dp,arr,index-1);
+// 	    return dp[index]=max(l,r);
 	    
-	}
-	int findMaxSum(int *arr, int n) {
-	    vector<int> dp(n,-1);
-	    return help_findMaxSum(dp,arr,n-1);
+// 	}
+// 	int findMaxSum(int *arr, int n) {
+// 	    vector<int> dp(n,-1);
+// 	    return help_findMaxSum(dp,arr,n-1);
+// 	}
+
+    //3.Tabulation, TC-O(N), SC-O(N)
+//     int findMaxSum(int *arr, int n) {
+// 	    vector<int> dp(n,-1);
+// 	    dp[0]=arr[0];
+// 	    for(int i=1;i<n;i++){
+	        
+// 	        int l=arr[i];
+//          if(i-2>=0)l+=dp[i-2];
+
+// 	        int r=dp[i-1];
+// 	        dp[i]=max(l,r);
+// 	    }
+// 	    return dp[n-1];
+// 	}
+
+    //4.Tabulation with space optimization, TC-O(N), SC-O(1)
+    int findMaxSum(int *arr, int n) {
+	    
+	    int prev1=0,prev2=arr[0];
+
+	    for(int i=1;i<n;i++){
+	        
+	        int temp=max(prev1+arr[i],prev2);
+	        prev1=prev2;
+	        prev2=temp;
+	    }
+	    return prev2;
 	}
 };
 
