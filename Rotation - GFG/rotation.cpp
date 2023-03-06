@@ -12,6 +12,7 @@ using namespace std;
 
 //Approach1-use linear search tp find smallest.
 //Approach2-use binary search to find condition arr[mid-1]>arr[mid]&&arr[mid]<arr[mid+1]
+//https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/
 class Solution{
 public:	
 	int findKRotation(int arr[], int n) {
@@ -22,6 +23,8 @@ public:
 	   
 	   while(l<=r){
 	       int mid=(l+r)/2;
+	       
+	       //next 2 steps ensure mid-1 and mid+1 does not go out of bounds 
 	       int prev=(mid-1+n)%n;
 	       int nxt=(mid+1)%n;
 	       
