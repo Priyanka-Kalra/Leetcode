@@ -7,11 +7,11 @@ using namespace std;
 // } Driver Code Ends
 //User function template for C++
 
-//1.brute force-make all subsets and find the sum
+
 
 //User function template for C++
 
-//1.brute force-make all subsets and find the sum
+
 
 class Solution{ 
     int n;
@@ -57,7 +57,7 @@ public:
     //     return helper(dp,arr,n-1,sum);
     // }
 
-//Tabulation
+//Tabulation(different implementation used in leetcode 416)
     bool isSubsetSum(vector<int>arr, int sum){
         n=arr.size();
         vector<vector<bool> > dp(n,vector<bool> (sum+1,0));
