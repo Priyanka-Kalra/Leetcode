@@ -34,27 +34,47 @@ public:
     // }
 
 //Memoization,TC-O(n*sum)
-    bool helper(vector<vector<int> > &dp,vector<int>arr,int ind,int target){
+    // bool helper(vector<vector<int> > &dp,vector<int>arr,int ind,int target){
         
         
-        if(target==0)return dp[ind][target]=1;
-        if(ind==0)return dp[ind][target]=arr[0]==target;
+    //     if(target==0)return dp[ind][target]=1;
+    //     if(ind==0)return dp[ind][target]=arr[0]==target;
         
         
-        if(dp[ind][target]!=-1)return dp[ind][target];
+    //     if(dp[ind][target]!=-1)return dp[ind][target];
         
         
-        bool take=arr[ind]<=target?helper(dp,arr,ind-1,target-arr[ind]):false;
-        bool not_take=helper(dp,arr,ind-1,target);
-        return dp[ind][target] =take || not_take;
+    //     bool take=arr[ind]<=target?helper(dp,arr,ind-1,target-arr[ind]):false;
+    //     bool not_take=helper(dp,arr,ind-1,target);
+    //     return dp[ind][target] =take || not_take;
         
-    }
+    // }
+    // bool isSubsetSum(vector<int>arr, int sum){
+    //     n=arr.size();
+    //     vector<vector<int> > dp(n,vector<int> (sum+1,-1));
+    //     //-1 if not visited.1/0 for true/false
+        
+    //     return helper(dp,arr,n-1,sum);
+    // }
+
+//Tabulation
     bool isSubsetSum(vector<int>arr, int sum){
         n=arr.size();
-        vector<vector<int> > dp(n,vector<int> (sum+1,-1));
-        //-1 if not visited.1/0 for true/false
+        vector<vector<bool> > dp(n,vector<bool> (sum+1,0));
         
-        return helper(dp,arr,n-1,sum);
+        for(int i=0;i<n;i++)dp[i][0]=true;
+        dp[0][arr[0]]=true;
+        
+        for(int ind=1;ind<n;ind++){
+            for(int target=1;target<=sum;target++){
+                bool take=arr[ind]<=target?dp[ind-1][target-arr[ind]]:false;
+                bool not_take=dp[ind-1][target];
+                dp[ind][target] =take || not_take;
+            }
+        }
+        
+        
+        return dp[n-1][sum];
     }
 };
 
