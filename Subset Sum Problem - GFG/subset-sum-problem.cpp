@@ -37,8 +37,8 @@ public:
     bool helper(vector<vector<int> > &dp,vector<int>arr,int ind,int target){
         
         
-        if(target==0)return 1;
-        if(ind==0)return arr[0]==target;
+        if(target==0)return dp[ind][target]=1;
+        if(ind==0)return dp[ind][target]=arr[0]==target;
         
         
         if(dp[ind][target]!=-1)return dp[ind][target];
