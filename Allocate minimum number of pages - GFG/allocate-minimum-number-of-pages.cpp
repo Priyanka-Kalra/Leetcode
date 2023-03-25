@@ -39,6 +39,7 @@ class Solution
             high+=A[i];
         }
         if(M==N)return low;
+        else if(M==1)return high;
         
         int ans=INT_MAX;
         while(low<=high){
