@@ -15,13 +15,24 @@ class Solution{
     bool check(vector<ll> A, vector<ll> B, int N) {
         
         unordered_map<ll,int> mp1;
-        unordered_map<ll,int> mp2;
+        //unordered_map<ll,int> mp2;
         
         for(int i=0;i<N;i++)mp1[A[i]]++;
-        for(int i=0;i<N;i++)mp2[B[i]]++;
+        for(int i=0;i<N;i++){
+            long long el=B[i];
+            
+            if(mp1.find(el)!=mp1.end()){
+                
+                if(mp1[el]>1)mp1[el]--;
+                else mp1.erase(el);
+            }
+            else return false;
+            
+        }
+        return mp1.size()==0;
         
         
-        return mp1==mp2;
+        //return mp1==mp2;
     }
 };
 
