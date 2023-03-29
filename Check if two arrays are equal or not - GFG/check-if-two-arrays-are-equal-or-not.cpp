@@ -18,6 +18,8 @@ class Solution{
         //unordered_map<ll,int> mp2;
         
         for(int i=0;i<N;i++)mp1[A[i]]++;
+        //for(int i=0;i<N;i++)mp2[B[i]]++;
+        
         for(int i=0;i<N;i++){
             long long el=B[i];
             
